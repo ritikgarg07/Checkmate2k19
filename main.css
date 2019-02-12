@@ -24,3 +24,34 @@ body {
     overflow: hidden;
     height: 100vh;
 }
+.fixed-top{
+    position: fixed;
+    height: 10%;
+}
+.team-head{
+    position: fixed;
+    left:40%;
+    top:0.5%;
+}
+.team-display{
+    position: fixed;
+    top:5%;
+    left: 40%;
+}
+.score-head{
+    position: fixed;
+    right:1.2%;
+    top:0.5%;
+}
+.score-display{
+    position: fixed;
+    top:5%;
+    right: 1%;
+}
+#mainNav.fixed-top {
+  width: 100%;
+}
+.navbar-brand {
+  color: #44422A;
+  font-family: 'Press Start 2P','Kaushan Script', Arial, sans-serif, cursive;
+}
