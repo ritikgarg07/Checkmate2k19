@@ -5,16 +5,10 @@ body {
     box-sizing: border-box;
     overflow: hidden;
 }
-#top-line {
-    position: fixed;
-    bottom: 85vh;
-    width: 8000%;
-    background-color: lightblue;        
-}
+
 #game{
     margin: 0px;
     position: absolute;
-    /* height: 100vh; */
     left: 0px;
     top: 0vh;
 }

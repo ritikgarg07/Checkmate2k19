@@ -183,11 +183,9 @@ var flag_up = true;
 function stay() {
     for (var ii = 0; ii < rest_top.length; ii++) {
         if (mario.bottom >= rest_top[ii].top && mario.left < rest_top[ii].right && mario.right > rest_top[ii].left) {
-            console.log(ii);
             return ii; // checks  in descending order
         }
     }
-    console.log(-1);
     return -1;
 }
 /***************************************************************/
@@ -224,18 +222,16 @@ function handleKeyUp(event) {
 
 function onb() { //checks if on block and moves char down if reqd
     if (stay() != -1) {
-        console.log("blah");
         transformSvgElement(mario.element,mario.left,rest_top[stay()].top + mario.height);
     } else if(stay() == -1) {
         transformSvgElement(mario.element,mario.left,mario.defaultbottom + mario.height);
-        console.log("NO!");
     }
 }
 var falling;
 function moveUp(e) {
     e = e || window.event;
-    if (e.keyCode == '38' && key_left != true && key_right!=true) {
-        window.removeEventListener("keydown", moveUp);
+    if (e.keyCode == '38') {
+        window.removeEventListener("keydown",moveUp);
         clearTimeout(falling);
         flag_up = false;
         // up arrow
@@ -267,7 +263,7 @@ function moveUp(e) {
     //     flag_up = false;
     //     // up arrow
     //     var flag = 0;
-    //     jump_start: {
+    //     jump_start:{
     //         for (var ii = rest_top.length - 1; ii > -1; --ii) //ascending order
     //         {
     //             if (mario.left < rest_top[ii].right && mario.right > rest_top[ii].left){
@@ -337,7 +333,6 @@ function moveDown(e) {
             window.addEventListener("keydown", moveUp);
         }
         if (stay() != -1) {
-            console.log("hula");
             transformSvgElement(mario.element,mario.left,rest_top[stay()].top + mario.height);
         } 
         else transformSvgElement(mario.element,mario.left,mario.defaultbottom + mario.height);
@@ -392,7 +387,6 @@ function moveSide() {
         if(pixelx > speed_rel){pixelx = speed_rel;}
         game.style.left = (parseFloat(window.getComputedStyle(document.getElementById("game")).getPropertyValue('left')) - 
         ((pixelx*3360/100)*ratio)) + 'px';             // in pixels here
-        console.log(mario.bottom);
         transformSvgElement(mario.element,mario.left + pixelx,mario.bottom + mario.height);
         pixelx = 0;
     }
