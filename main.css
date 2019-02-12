@@ -19,10 +19,8 @@ body {
     top: 0vh;
 }
 #game svg{
-    position: fixed;
+    position: absolute;
     box-sizing: border-box;
     overflow: hidden;
     height: 100vh;
-    /*height: 480px; */
-    /* width: 3360px; */
 }
